@@ -1,14 +1,10 @@
 import requests
 import folium
-
-
 def main():
     r = requests.get(url)
     data = r.json()
     map_data = []
-    print (data)
     for d in data:
-        #print(d)
         try:
             map_data.append([d['_primary_decsription'], d['latitude'], d['longitude']])
         except KeyError:
